@@ -1,0 +1,21 @@
+.accept-decline-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accept-decline-buttons-container > .btn:nth-child(1) {
+    order: -1;
+    margin-right: auto;
+}
+
+.accept-button {
+   margin-right: 1rem;
+}
+
+.card-dark {
+    color: white;
+    margin: 10px;
+    padding: 5px;
+    background: #333436
+}

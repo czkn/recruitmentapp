@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  background-color: #292929;
+}
+
+.recruitment-app-title {
+  margin-left: 2rem;
+}
+
+.main-navbar {
+  background-color: rgb(36,36,36);
+}
+
+.login-nav {
+  margin-right: 2rem;
+}
+
+.default-container,
+.signup-container,
+.jobs-container {
+  padding: 1.5rem;
+  background-color: rgb(36,36,36);
+  margin: 5rem auto;
+  max-width: 95%;
+  border-radius: 1rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+
+.default-container {
+  width: 40rem;
+}
+
+.signup-container {
+  width: 45rem;
+}
+
+.jobs-container {
+  width: 50rem;
+}
+
+.h2-white {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}

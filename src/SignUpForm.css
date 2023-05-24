@@ -1,0 +1,44 @@
+.signup-form-label {
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.signup-apply-button-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.signup-button {
+    margin-top: 0.75rem;
+    width: 12rem;
+    height: 3.1rem;
+    border-radius: 40px !important;
+    background-color: #6e40c9 !important;
+    border: none !important
+}
+
+.signup-input-dark {
+    background-color: #252525 !important;
+    border-color: #595965 !important;
+    color: #595965 !important;
+}
+
+input[type="file"]::file-selector-button {
+    color: #595965;
+    background-color: #252525;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 100000s ease-in-out 0s;
+    -webkit-text-fill-color: #595965 !important;
+}

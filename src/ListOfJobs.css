@@ -1,0 +1,53 @@
+.title {
+    font-size: 1.5rem;
+}
+
+.salary-container {
+    text-align: right;
+    color: #7ee787;
+    font-size: 1.3rem;
+}
+
+.modal-dark-color,
+.modal-dark-color-center{
+    border: none;
+    background-color: #333436;
+}
+
+.modal-dark-color-center {
+    display: flex;
+    justify-content: center;
+}
+
+.apply-for-job-button {
+    border-radius: 2rem !important;
+    background-color: #6e40c9 !important;
+    border: none !important;
+}
+
+.radio-jobs {
+    margin-left: 1.5rem;
+}
+
+.localization-marker {
+    margin-bottom: 0.5rem;
+}
+
+.mandatory-skills {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mandatory-skills__background {
+    background-color: rgb(36,36,36);
+    padding: 0 0.5rem;
+    border-radius: 2rem;
+}
+
+.card-content {
+    margin: 0.7rem;
+    padding: 0.3rem;
+    background-color: #333436;
+}
+

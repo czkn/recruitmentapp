@@ -1,0 +1,11 @@
+.save-button-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.save-button {
+    width: 6rem;
+    border-radius: 3rem;
+}
+
