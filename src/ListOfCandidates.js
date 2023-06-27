@@ -14,7 +14,6 @@ const ListOfCandidates = (props) => {
     const[jobs,setJobs] = useState([])
     const[show, setShow] = useState(false)
     const[candidate, setCandidate] = useState({})
-    const[userId, setUserId] = useState("")
     const [searchTerm, setSearchTerm] = useState('');
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search by first name, last name, jobs name, email, language or phone number");
     const [areCandidatesLoading, setAreCandidatesLoading] = useState(true);
@@ -25,20 +24,14 @@ const ListOfCandidates = (props) => {
         props.getUserRole().then(userRole => {
             if(userRole !== "Hr") navigate("/login");
         });
-        props.getUserId().then(hrId => {
-            setUserId(hrId)
-        });
         getJobs()
+        getCandidates()
     }, [])
-
-    useEffect(() => {
-        if(userId !== "") getCandidates()
-    }, [userId])
 
 
     const getCandidates = () => {
         axios
-            .get("http://localhost:7053/api/Candidate/" + userId, {withCredentials: true})
+            .get("http://localhost:7053/api/Candidate", {withCredentials: true})
             .then(response => { setCandidates(response.data); setAreCandidatesLoading(false); })
             .catch(error => console.log(error))
     }
@@ -100,7 +93,7 @@ const ListOfCandidates = (props) => {
                 ))}
             </Container>
 
-            <CandidateInfo candidate={candidate} show={show} setShow={setShow} getCandidates={getCandidates} jobs={jobs} show={show} setShow={setShow} userId={userId}/>
+            <CandidateInfo candidate={candidate} show={show} setShow={setShow} getCandidates={getCandidates} jobs={jobs} show={show} setShow={setShow}/>
 
         </div>
     )

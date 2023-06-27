@@ -29,7 +29,7 @@ const CandidateInfo = (props) => {
 
     const downloadCv = () => {
         axios
-            .get(`http://localhost:7053/api/Candidate/${props.candidate.id}/GetCandidateCv,` + props.userId,
+            .get(`http://localhost:7053/api/Candidate/${props.candidate.id}/GetCandidateCv`,
                 {withCredentials: true, responseType: 'blob'})
             .then(response => {
                 const blob = new Blob([response.data], { type: 'application/pdf' });
@@ -40,7 +40,7 @@ const CandidateInfo = (props) => {
 
     const deleteCandidate = () => {
         axios
-            .delete("http://localhost:7053/api/Candidate/" + props.candidate.id + ", " + props.userId, {withCredentials: true})
+            .delete("http://localhost:7053/api/Candidate/" + props.candidate.id, {withCredentials: true})
             .then(() => props.getCandidates())
             .catch(error => console.log(error))
 
@@ -57,7 +57,7 @@ const CandidateInfo = (props) => {
           {isCandidateAccepted ?
               <Modal.Body className={"modal-dark-color"}>
                   <SaveCandidateForm candidate={props.candidate} deleteCandidate = {deleteCandidate}
-                                     userId={props.userId} jobs={props.jobs} show={props.show} setShow={props.setShow} setIsCandidateAccepted={setIsCandidateAccepted}/>
+                                     jobs={props.jobs} show={props.show} setShow={props.setShow} setIsCandidateAccepted={setIsCandidateAccepted}/>
               </Modal.Body>
               :
               <>

@@ -20,15 +20,6 @@ function App() {
             .catch(error => {return null;});
     };
 
-    const getUserId = () => {
-        return axios.get("http://localhost:7053/api/User/getUserId", {withCredentials: true})
-            .then(response => {
-                if(response.status === 200) {
-                    return response.data;
-                }})
-            .catch(error => {return null;});
-    };
-
     useEffect(() => {
         getUserRole().then(userRole => {
             setUserRole(userRole)
@@ -58,7 +49,7 @@ function App() {
 
             </Navbar>
 
-          <AppRouter getUserRole={getUserRole} getUserId={getUserId} setUserRole={setUserRole}/>
+          <AppRouter getUserRole={getUserRole} setUserRole={setUserRole}/>
 
         </div>
     );

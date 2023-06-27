@@ -22,7 +22,7 @@ const SaveCandidateForm = (props) => {
     }, [postEmployeeStatusCode])
 
     const postEmployee = () => {
-        axios.post("http://localhost:7053/api/Employee/" + props.userId + ", " + props.candidate.jobId + ", " + props.candidate.id, {
+        axios.post("http://localhost:7053/api/Employee/" + props.candidate.jobId + ", " + props.candidate.id, {
             firstName: props.candidate.firstName,
             lastName: props.candidate.lastName,
             emailAddress: props.candidate.emailAddress,

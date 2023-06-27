@@ -13,9 +13,9 @@ function AppRouter(props) {
     return (
         <Routes>
             <Route path={"/candidateForm"} element={<CandidateForm />} />
-            <Route path={"/listOfJobs"} element={<ListOfJobs getUserRole={props.getUserRole} getUserId={props.getUserId} />} />
-            <Route path={"/listOfCandidates"} element={<ListOfCandidates getUserRole={props.getUserRole} getUserId={props.getUserId}/>} />
-            <Route path={"/createJob"} element={<CreateJob getUserRole={props.getUserRole} getUserId={props.getUserId} />} />
+            <Route path={"/listOfJobs"} element={<ListOfJobs getUserRole={props.getUserRole} />} />
+            <Route path={"/listOfCandidates"} element={<ListOfCandidates getUserRole={props.getUserRole}/>} />
+            <Route path={"/createJob"} element={<CreateJob getUserRole={props.getUserRole} />} />
             <Route path={"/login"} element={<Login getUserRole={props.getUserRole} setUserRole={props.setUserRole}/>} />
             <Route path={"/logout"} element={<LogOut getUserRole={props.getUserRole} setUserRole={props.setUserRole}  />} />
             <Route path={"/register"} element={<Register getUserRole={props.getUserRole} />} />

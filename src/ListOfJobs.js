@@ -15,7 +15,6 @@ const ListOfJobs = (props) => {
     const[show, setShow] = useState(false)
     const[job, setJob] = useState({description: ""})
     const[userRole,setUserRole] = useState("")
-    const[userId,setUserId] = useState("")
     const[radioValue,setRadioValue] = useState('1')
     const [searchTerm, setSearchTerm] = useState('');
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search by name, localization, skills, or work model");
@@ -37,7 +36,7 @@ const ListOfJobs = (props) => {
 
     const getJobsCreatedByHr = () => {
         axios
-            .get("http://localhost:7053/api/Job/" + userId, {withCredentials: true})
+            .get("http://localhost:7053/api/Job/CreatedByHrUser", {withCredentials: true})
             .then(response => {setJobs(response.data); setAreJobsLoading(false);})
             .catch(error => console.log(error))
     }
@@ -50,10 +49,6 @@ const ListOfJobs = (props) => {
     useEffect(() => {
         props.getUserRole().then(userRole => {
             setUserRole(userRole);
-        });
-
-        props.getUserId().then(hrId => {
-            setUserId(hrId)
         });
     }, []);
 
@@ -83,7 +78,7 @@ const ListOfJobs = (props) => {
 
     const deleteJob = () => {
         axios
-            .delete("http://localhost:7053/api/Job/" + job.id + ", " + userId, {withCredentials: true})
+            .delete("http://localhost:7053/api/Job/" + job.id, {withCredentials: true})
             .then(() => {handleGetJobs()})
             .catch(error => console.log(error))
 

@@ -19,7 +19,6 @@ const CreateJob = (props) => {
     const [workingTimeInHours, setWorkingTimeInHours] = useState(8);
     const [mandatorySkills, setMandatorySkills] = useState("");
     const [appreciatedSkills, setAppreciatedSkills] = useState("");
-    const [userId, setUserId] = useState("");
     const [postJobStatusCode, setPostJobStatusCode] = useState(400);
     const [postJobErrors, setPostJobErrors] = useState([]);
 
@@ -32,10 +31,6 @@ const CreateJob = (props) => {
     useEffect(() => {
         props.getUserRole().then(userRole => {
             if(userRole !== "Hr") navigate("/login");
-        });
-
-        props.getUserId().then(userId => {
-            setUserId(userId)
         });
     }, []);
 
@@ -65,7 +60,7 @@ const CreateJob = (props) => {
     const postJob = () => {
 
         axios
-            .post("http://localhost:7053/api/Job/" + userId, {
+            .post("http://localhost:7053/api/Job/", {
             name: name,
             description: description,
             programmingLanguage: programmingLanguage,
