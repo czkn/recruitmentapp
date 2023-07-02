@@ -60,13 +60,12 @@ const Login = (props) => {
                         <Form.Label className={"signup-form-label"}>Email</Form.Label>
                         <Form.Control
                             className={"signup-input-dark"}
-                            type="text"
+                            type="email"
                             placeholder="Please enter your Email"
                             required
                             value={email}
                             name={"email"}
                             onChange={(event) => setEmail(event.target.value)}
-                            pattern = "[a-zA-Z0-9._%+-ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+@[a-zA-Z0-9.-]+\.(com|pl)$"
                         />
                         <Form.Control.Feedback type="invalid">
                             {loginUserErrors.Email !== undefined && loginUserErrors.Email[0]}
