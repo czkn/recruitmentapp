@@ -106,7 +106,7 @@ const Register = (props) => {
                             value={password}
                             name={"password"}
                             onChange={(event) => setPassword(event.target.value)}
-                            minLength={"10"}
+                            minLength={"15"}
                         />
                         <Form.Control.Feedback type="invalid">
                             {postUserErrors.Password !== undefined && postUserErrors.Password[0]}
