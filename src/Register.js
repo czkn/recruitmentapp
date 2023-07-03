@@ -106,7 +106,7 @@ const Register = (props) => {
                             value={password}
                             name={"password"}
                             onChange={(event) => setPassword(event.target.value)}
-                            pattern={"^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+~-])(?=.{8,})[a-zA-Z\\d!@#$%^&*()_+~-]+$"}
+                            minLength={"10"}
                         />
                         <Form.Control.Feedback type="invalid">
                             {postUserErrors.Password !== undefined && postUserErrors.Password[0]}
